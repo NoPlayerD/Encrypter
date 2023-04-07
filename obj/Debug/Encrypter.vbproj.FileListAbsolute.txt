@@ -1,0 +1,13 @@
+C:\Users\NoPlayer\source\repos\Encrypter\obj\Debug\Encrypter.vbprojAssemblyReference.cache
+C:\Users\NoPlayer\source\repos\Encrypter\obj\Debug\Encrypter.Form1.resources
+C:\Users\NoPlayer\source\repos\Encrypter\obj\Debug\Encrypter.Resources.resources
+C:\Users\NoPlayer\source\repos\Encrypter\obj\Debug\Encrypter.vbproj.GenerateResource.cache
+C:\Users\NoPlayer\source\repos\Encrypter\obj\Debug\Encrypter.vbproj.CoreCompileInputs.cache
+C:\Users\NoPlayer\source\repos\Encrypter\bin\Debug\Encrypter.exe.config
+C:\Users\NoPlayer\source\repos\Encrypter\bin\Debug\Encrypter.exe
+C:\Users\NoPlayer\source\repos\Encrypter\bin\Debug\Encrypter.pdb
+C:\Users\NoPlayer\source\repos\Encrypter\bin\Debug\Encrypter.xml
+C:\Users\NoPlayer\source\repos\Encrypter\obj\Debug\Encrypter.exe
+C:\Users\NoPlayer\source\repos\Encrypter\obj\Debug\Encrypter.xml
+C:\Users\NoPlayer\source\repos\Encrypter\obj\Debug\Encrypter.pdb
+C:\Users\NoPlayer\source\repos\Encrypter\obj\Debug\Encrypter.Form2.resources

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Encrypter
+</name>
+</assembly>
+<members>
+<member name="T:Encrypter.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Encrypter.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Encrypter.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="M:Utils.modUtils.ReadFile(System.String,System.IO.FileShare)">
+ <summary>
+ Reads a file at the given path into a byte array
+ </summary>
+ <param name="filePath">The path of the file to be read</param>
+ <param name="shareOption">Determines how the file will be shared by processes</param>
+ <returns>The contents of the file as a byte array</returns>
+</member>
+<member name="M:Utils.modUtils.SaveFile(System.String,System.Byte[],System.IO.FileShare)">
+ <summary>
+ Saves a file at the given path with the contents of the byte array
+ </summary>
+ <param name="filePath">The path of the file to be saved</param>
+ <param name="fileBytes">The byte array containing the file contents</param>
+ <param name="shareOption">Determines how the file will be shared by processes</param>
+</member>
+</members>
+</doc>
