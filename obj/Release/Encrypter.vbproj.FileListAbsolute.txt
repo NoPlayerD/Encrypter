@@ -21,3 +21,16 @@ C:\Users\NoPlayer\Documents\Encrypter\obj\Release\Encrypter.vbproj.CoreCompileIn
 C:\Users\NoPlayer\Documents\Encrypter\obj\Release\Encrypter.exe
 C:\Users\NoPlayer\Documents\Encrypter\obj\Release\Encrypter.xml
 C:\Users\NoPlayer\Documents\Encrypter\obj\Release\Encrypter.pdb
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\bin\Release\Encrypter.exe.config
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\bin\Release\Encrypter.exe
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\bin\Release\Encrypter.pdb
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\bin\Release\Encrypter.xml
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.vbprojAssemblyReference.cache
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.Form1.resources
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.Form2.resources
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.Resources.resources
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.vbproj.GenerateResource.cache
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.vbproj.CoreCompileInputs.cache
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.exe
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.xml
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.pdb

@@ -42,16 +42,16 @@ Public Class Form2
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim d As New FolderBrowserDialog
+        d.Description = "Select a KEY dll"
         Dim rnd As New Random
-        Dim first, second, third, fourth As Integer
+        Dim keys(35) As Integer
         Dim key As Byte()
 
-        first = rnd.Next(1, 100)
-        second = rnd.Next(1, 100)
-        third = rnd.Next(1, 100)
-        fourth = rnd.Next(1, 100)
+        For i As Integer = 0 To 35
+            keys(i) = rnd.Next(1, 200)
+        Next
 
-        key = {first, 2, second, 68, 231, 13, 94, 101, 123, 6, 0, 12, 32, 91, 4, 111, 31, 70, 21, 141, 123, 142, 234, 82, 95, 129, 187, 162, 12, third, 98, fourth}
+        key = {keys(1), keys(2), keys(3), keys(4), keys(5), keys(6), keys(7), keys(8), keys(9), keys(10), keys(11), keys(12), keys(13), keys(14), keys(15), keys(16), keys(17), keys(18), keys(19), keys(20), keys(21), keys(22), keys(23), keys(24), keys(25), keys(26), keys(27), keys(28), keys(29), keys(30), keys(31), keys(32)}
 
         d.ShowDialog()
         If Not d.SelectedPath = vbNullString Then
@@ -66,21 +66,21 @@ Public Class Form2
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Dim d As New FolderBrowserDialog
+        d.Description = "Select a IV dll"
         Dim rnd As New Random
-        Dim first, second, third, fourth As Integer
-        Dim key As Byte()
+        Dim ivs(16) As Integer
+        Dim iv As Byte()
 
-        first = rnd.Next(1, 100)
-        second = rnd.Next(1, 100)
-        third = rnd.Next(1, 100)
-        fourth = rnd.Next(1, 100)
+        For i As Integer = 0 To 16
+            ivs(i) = rnd.Next(1, 200)
+        Next
 
-        key = {235, first, second, 45, 214, 222, 200, 109, 2, third, 45, 76, fourth, 53, 23, 78}
+        iv = {ivs(1), ivs(2), ivs(3), ivs(4), ivs(5), ivs(6), ivs(7), ivs(8), ivs(9), ivs(10), ivs(11), ivs(12), ivs(13), ivs(14), ivs(15), ivs(16)}
 
         d.ShowDialog()
         If Not d.SelectedPath = vbNullString Then
             Try
-                Utils.SaveFile(d.SelectedPath + "\iv.dll", key)
+                Utils.SaveFile(d.SelectedPath + "\iv.dll", iv)
             Catch ex As Exception
                 MsgBox("Error..", MsgBoxStyle.Critical)
             End Try
@@ -91,5 +91,20 @@ Public Class Form2
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         My.Settings.key = vbNullString
         My.Settings.iv = vbNullString
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Dim b As New FolderBrowserDialog
+        b.Description = "Select a folder containing the IV and KEY dll"
+        b.ShowDialog()
+        If Not b.SelectedPath = vbNullString Then
+            Try
+                My.Settings.key = b.SelectedPath & "\key.dll"
+                My.Settings.iv = b.SelectedPath & "\iv.dll"
+            Catch ex As Exception
+                MsgBox("Please select a valid folder contains key and iv dll", MsgBoxStyle.Critical)
+            End Try
+        End If
+
     End Sub
 End Class

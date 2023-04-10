@@ -26,6 +26,7 @@ Partial Class Form2
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form2))
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button3 = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -37,7 +38,7 @@ Partial Class Form2
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -55,6 +56,7 @@ Partial Class Form2
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Button6)
         Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.Label1)
@@ -64,9 +66,19 @@ Partial Class Form2
         Me.GroupBox1.Controls.Add(Me.TextBox1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(509, 103)
+        Me.GroupBox1.Size = New System.Drawing.Size(509, 158)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
+        '
+        'Button3
+        '
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.Button3.Location = New System.Drawing.Point(9, 109)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(494, 28)
+        Me.Button3.TabIndex = 9
+        Me.Button3.Text = "Reset"
+        Me.Button3.UseVisualStyleBackColor = True
         '
         'Label2
         '
@@ -95,7 +107,7 @@ Partial Class Form2
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(64, 20)
         Me.Button2.TabIndex = 4
-        Me.Button2.Text = "Change"
+        Me.Button2.Text = "Select Path"
         Me.Button2.UseVisualStyleBackColor = True
         '
         'TextBox2
@@ -116,7 +128,7 @@ Partial Class Form2
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(64, 20)
         Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Change"
+        Me.Button1.Text = "Select Path"
         Me.Button1.UseVisualStyleBackColor = True
         '
         'OpenFileDialog1
@@ -134,7 +146,7 @@ Partial Class Form2
         '
         Me.GroupBox2.Controls.Add(Me.Button4)
         Me.GroupBox2.Controls.Add(Me.Button5)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 121)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 176)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(509, 91)
         Me.GroupBox2.TabIndex = 2
@@ -160,26 +172,27 @@ Partial Class Form2
         Me.Button5.Text = "Random Key - Save"
         Me.Button5.UseVisualStyleBackColor = True
         '
-        'Button3
+        'Button6
         '
-        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
-        Me.Button3.Location = New System.Drawing.Point(9, 68)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(494, 28)
-        Me.Button3.TabIndex = 9
-        Me.Button3.Text = "Reset"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.Button6.Location = New System.Drawing.Point(9, 75)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(494, 28)
+        Me.Button6.TabIndex = 10
+        Me.Button6.Text = "Select Folder of KEY and IV"
+        Me.Button6.UseVisualStyleBackColor = True
         '
         'Form2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
-        Me.ClientSize = New System.Drawing.Size(533, 224)
+        Me.ClientSize = New System.Drawing.Size(533, 279)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MaximizeBox = False
         Me.Name = "Form2"
         Me.ShowIcon = False
         Me.Text = "Config"
@@ -204,4 +217,5 @@ Partial Class Form2
     Friend WithEvents Button4 As Button
     Friend WithEvents Button5 As Button
     Friend WithEvents Button3 As Button
+    Friend WithEvents Button6 As Button
 End Class
