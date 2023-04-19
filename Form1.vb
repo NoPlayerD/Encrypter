@@ -85,4 +85,48 @@ Public Class Form1
         Me.encryptor = symmetricKey.CreateEncryptor(KEY_128, IV_128)
         Me.decryptor = symmetricKey.CreateDecryptor(KEY_128, IV_128)
     End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        If Not My.Computer.Clipboard.GetText = vbNullString Then RichTextBox1.Text = My.Computer.Clipboard.GetText Else MsgBox("Error..", MsgBoxStyle.Critical)
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        RichTextBox1.Text = vbNullString
+    End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Dim b As New FolderBrowserDialog
+        Dim n As String
+        If RichTextBox1.Text = vbNullString Then
+            MsgBox("There's nothing to save..", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
+        n = InputBox("Please enter a name for your save: ")
+        If n = vbNullString Then
+            MsgBox("Please enter a valid name..", MsgBoxStyle.Critical)
+            Exit Sub
+        End If
+        b.Description = vbNullString
+        b.ShowDialog()
+        If Not b.SelectedPath = vbNullString Then
+            Try
+                My.Computer.FileSystem.WriteAllText(b.SelectedPath + "\" + n + ".txt", RichTextBox1.Text, True)
+            Catch ex As Exception
+                MsgBox("Error..", MsgBoxStyle.Critical)
+            End Try
+        End If
+    End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        Dim b As New OpenFileDialog
+        b.Title = vbNullString
+        b.ShowDialog()
+        If Not b.FileName = vbNullString Then
+            Try
+                RichTextBox1.Text = My.Computer.FileSystem.ReadAllText(b.FileName)
+            Catch ex As Exception
+                MsgBox("Error..", MsgBoxStyle.Critical)
+            End Try
+        End If
+    End Sub
 End Class

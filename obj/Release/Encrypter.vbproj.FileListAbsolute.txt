@@ -34,3 +34,7 @@ C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.vbproj.Cor
 C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.exe
 C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.xml
 C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.pdb
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\bin\Release\Encrypter.exe.manifest
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\bin\Release\Encrypter.application
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.exe.manifest
+C:\Users\NoPlayer\Documents\Encrypter\Encrypter\obj\Release\Encrypter.application

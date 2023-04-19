@@ -42,7 +42,7 @@ Public Class Form2
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
         Dim d As New FolderBrowserDialog
-        d.Description = "Select a KEY dll"
+        d.Description = "Select a Key.1 dll"
         Dim rnd As New Random
         Dim keys(35) As Integer
         Dim key As Byte()
@@ -56,7 +56,7 @@ Public Class Form2
         d.ShowDialog()
         If Not d.SelectedPath = vbNullString Then
             Try
-                Utils.SaveFile(d.SelectedPath + "\key.dll", key)
+                Utils.SaveFile(d.SelectedPath + "\Key.1.dll", key)
             Catch ex As Exception
                 MsgBox("Error..", MsgBoxStyle.Critical)
             End Try
@@ -66,7 +66,7 @@ Public Class Form2
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
         Dim d As New FolderBrowserDialog
-        d.Description = "Select a IV dll"
+        d.Description = "Select a Key.2 dll"
         Dim rnd As New Random
         Dim ivs(16) As Integer
         Dim iv As Byte()
@@ -80,7 +80,7 @@ Public Class Form2
         d.ShowDialog()
         If Not d.SelectedPath = vbNullString Then
             Try
-                Utils.SaveFile(d.SelectedPath + "\iv.dll", iv)
+                Utils.SaveFile(d.SelectedPath + "\Key.2.dll", iv)
             Catch ex As Exception
                 MsgBox("Error..", MsgBoxStyle.Critical)
             End Try
@@ -95,14 +95,14 @@ Public Class Form2
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
         Dim b As New FolderBrowserDialog
-        b.Description = "Select a folder containing the IV and KEY dll"
+        b.Description = "Select a folder containing the Key.1 and Key.2 dll"
         b.ShowDialog()
         If Not b.SelectedPath = vbNullString Then
             Try
-                My.Settings.key = b.SelectedPath & "\key.dll"
-                My.Settings.iv = b.SelectedPath & "\iv.dll"
+                My.Settings.key = b.SelectedPath & "\Key.1.dll"
+                My.Settings.iv = b.SelectedPath & "\Key.2.dll"
             Catch ex As Exception
-                MsgBox("Please select a valid folder contains key and iv dll", MsgBoxStyle.Critical)
+                MsgBox("Please select a valid folder contains Key.1 and Key.2 dll", MsgBoxStyle.Critical)
             End Try
         End If
 
