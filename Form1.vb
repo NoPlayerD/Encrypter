@@ -14,6 +14,9 @@ Public Class Form1
     Dim KEY_128 As Byte()
     Dim IV_128 As Byte()
 
+    Dim opened As String = vbNullString
+    Dim changed As Boolean
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Timer1.Enabled = True
     End Sub
@@ -84,6 +87,19 @@ Public Class Form1
         Me.enc = New System.Text.UTF8Encoding
         Me.encryptor = symmetricKey.CreateEncryptor(KEY_128, IV_128)
         Me.decryptor = symmetricKey.CreateDecryptor(KEY_128, IV_128)
+
+        If Not opened = vbNullString Then
+            Label1.Text = opened
+        Else
+            Label1.Text = vbNullString
+        End If
+
+        If changed = True Then
+            If Not opened.Contains("*") Then
+                opened = "*" & opened
+            End If
+        End If
+
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
@@ -97,24 +113,41 @@ Public Class Form1
     Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
         Dim b As New FolderBrowserDialog
         Dim n As String
-        If RichTextBox1.Text = vbNullString Then
-            MsgBox("There's nothing to save..", MsgBoxStyle.Critical)
-            Exit Sub
-        End If
-        n = InputBox("Please enter a name for your save: ")
-        If n = vbNullString Then
-            MsgBox("Please enter a valid name..", MsgBoxStyle.Critical)
-            Exit Sub
-        End If
-        b.Description = vbNullString
-        b.ShowDialog()
-        If Not b.SelectedPath = vbNullString Then
-            Try
-                My.Computer.FileSystem.WriteAllText(b.SelectedPath + "\" + n + ".txt", RichTextBox1.Text, True)
-            Catch ex As Exception
-                MsgBox("Error..", MsgBoxStyle.Critical)
-            End Try
-        End If
+        Try
+            If RichTextBox1.Text = vbNullString Then
+                MsgBox("There's nothing to save..", MsgBoxStyle.Critical)
+                Exit Sub
+            End If
+            If Not opened = vbNullString Then
+                If changed = True Then
+                    Dim Patgh As String = opened.Remove(opened.IndexOf("*"), 1)
+                    My.Computer.FileSystem.DeleteFile(Patgh)
+                    My.Computer.FileSystem.WriteAllText(Patgh, RichTextBox1.Text, True)
+                    changed = False
+                    opened = Patgh
+                    Exit Sub
+                End If
+                My.Computer.FileSystem.DeleteFile(opened)
+                My.Computer.FileSystem.WriteAllText(opened, RichTextBox1.Text, True)
+                changed = False
+                Exit Sub
+            End If
+            n = InputBox("Please enter a name for your save: ")
+            If n = vbNullString Then
+                MsgBox("Please enter a valid name..", MsgBoxStyle.Critical)
+                Exit Sub
+            End If
+            b.Description = vbNullString
+            b.ShowDialog()
+            If Not b.SelectedPath = vbNullString Then
+                My.Computer.FileSystem.WriteAllText(b.SelectedPath + "\" + n + ".ini", RichTextBox1.Text, True)
+            End If
+            changed = False
+            opened = b.SelectedPath + "\" + n + ".ini"
+        Catch ex As Exception
+            MsgBox("Error..", MsgBoxStyle.Critical)
+        End Try
+
     End Sub
 
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
@@ -124,9 +157,23 @@ Public Class Form1
         If Not b.FileName = vbNullString Then
             Try
                 RichTextBox1.Text = My.Computer.FileSystem.ReadAllText(b.FileName)
+                changed = False
+                opened = b.FileName
             Catch ex As Exception
                 MsgBox("Error..", MsgBoxStyle.Critical)
             End Try
+        End If
+    End Sub
+
+    Private Sub Button9_Click(sender As Object, e As EventArgs) Handles Button9.Click
+        opened = vbNullString
+        RichTextBox1.Clear()
+        changed = False
+    End Sub
+
+    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
+        If Not opened = vbNullString Then
+            changed = True
         End If
     End Sub
 End Class

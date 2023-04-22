@@ -31,11 +31,13 @@ Partial Class Form1
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button9 = New System.Windows.Forms.Button()
         Me.Button8 = New System.Windows.Forms.Button()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -70,7 +72,7 @@ Partial Class Form1
         Me.RichTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.RichTextBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.RichTextBox1.ForeColor = System.Drawing.Color.Silver
-        Me.RichTextBox1.Location = New System.Drawing.Point(0, 0)
+        Me.RichTextBox1.Location = New System.Drawing.Point(3, 0)
         Me.RichTextBox1.MaxLength = 0
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical
@@ -118,6 +120,17 @@ Partial Class Form1
         Me.GroupBox1.TabIndex = 5
         Me.GroupBox1.TabStop = False
         '
+        'Button6
+        '
+        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button6.ForeColor = System.Drawing.Color.DarkOliveGreen
+        Me.Button6.Location = New System.Drawing.Point(6, 48)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(272, 23)
+        Me.Button6.TabIndex = 7
+        Me.Button6.Text = "Clear"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'Button5
         '
         Me.Button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat
@@ -131,36 +144,26 @@ Partial Class Form1
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.Button9)
         Me.GroupBox2.Controls.Add(Me.Button8)
         Me.GroupBox2.Controls.Add(Me.Button7)
         Me.GroupBox2.Location = New System.Drawing.Point(310, 124)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(289, 79)
+        Me.GroupBox2.Size = New System.Drawing.Size(289, 113)
         Me.GroupBox2.TabIndex = 6
         Me.GroupBox2.TabStop = False
         '
-        'Button6
+        'Button9
         '
-        Me.Button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button6.ForeColor = System.Drawing.Color.DarkOliveGreen
-        Me.Button6.Location = New System.Drawing.Point(6, 48)
-        Me.Button6.Name = "Button6"
-        Me.Button6.Size = New System.Drawing.Size(272, 23)
-        Me.Button6.TabIndex = 7
-        Me.Button6.Text = "Clear"
-        Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button7
-        '
-        Me.Button7.BackColor = System.Drawing.Color.Black
-        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button7.ForeColor = System.Drawing.Color.DarkOliveGreen
-        Me.Button7.Location = New System.Drawing.Point(6, 19)
-        Me.Button7.Name = "Button7"
-        Me.Button7.Size = New System.Drawing.Size(272, 23)
-        Me.Button7.TabIndex = 8
-        Me.Button7.Text = "Open save"
-        Me.Button7.UseVisualStyleBackColor = False
+        Me.Button9.BackColor = System.Drawing.Color.Black
+        Me.Button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button9.ForeColor = System.Drawing.Color.DarkOliveGreen
+        Me.Button9.Location = New System.Drawing.Point(6, 77)
+        Me.Button9.Name = "Button9"
+        Me.Button9.Size = New System.Drawing.Size(272, 23)
+        Me.Button9.TabIndex = 10
+        Me.Button9.Text = "New"
+        Me.Button9.UseVisualStyleBackColor = False
         '
         'Button8
         '
@@ -171,8 +174,32 @@ Partial Class Form1
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(272, 23)
         Me.Button8.TabIndex = 9
-        Me.Button8.Text = "Get save"
+        Me.Button8.Text = "Save"
         Me.Button8.UseVisualStyleBackColor = False
+        '
+        'Button7
+        '
+        Me.Button7.BackColor = System.Drawing.Color.Black
+        Me.Button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.Button7.ForeColor = System.Drawing.Color.DarkOliveGreen
+        Me.Button7.Location = New System.Drawing.Point(6, 19)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(272, 23)
+        Me.Button7.TabIndex = 8
+        Me.Button7.Text = "Open"
+        Me.Button7.UseVisualStyleBackColor = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 6.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(162, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Label1.Location = New System.Drawing.Point(312, 240)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(0, 12)
+        Me.Label1.TabIndex = 7
         '
         'Form1
         '
@@ -180,6 +207,7 @@ Partial Class Form1
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.ClientSize = New System.Drawing.Size(611, 396)
+        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.RichTextBox1)
@@ -195,6 +223,7 @@ Partial Class Form1
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox2.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -210,4 +239,6 @@ Partial Class Form1
     Friend WithEvents Button6 As Button
     Friend WithEvents Button8 As Button
     Friend WithEvents Button7 As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Button9 As Button
 End Class
